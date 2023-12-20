@@ -34,6 +34,7 @@ exports.updateService = (req, res) => {
     Service.findByIdAndUpdate({ _id: req.body.sid },
         {
             ServicePrice: req.body.ServicePrice,
+            IsActive:req.body.IsActive
         },
         {
             new: true

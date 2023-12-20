@@ -15,8 +15,8 @@ exports.addAppointment = (req, res) => {
 }
 exports.getAllAppointment = (req, res) => {
     Appointment.find()
-        .populate('ServiceId', "ServiceName ServicePrice ServiceType")
-        .populate('CustomerId',"CustomerName CustomerMobile CustomerEmail")
+        .populate('ServiceId', 'ServiceName ServiceType')
+        .populate('CustomerId','CustomerEmail CustomerPassword')
         .then((result) => {
             res.status(200).json(result)
         }).catch((err) => {

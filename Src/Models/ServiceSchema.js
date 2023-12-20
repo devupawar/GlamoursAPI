@@ -4,7 +4,7 @@ const ServiceSchema = mongoose.Schema({
     ServicePrice: String,
     ServiceType: String,
     ServiceImage: String,
-    IsActive: Boolean
+    IsActive: String
 }, {
     timestamps: true
 })

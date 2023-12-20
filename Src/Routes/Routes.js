@@ -6,6 +6,7 @@ router.post("/addcustomer",CustomerController.addCustomer)
 router.get("/getAllcustomer",CustomerController.getAllCustomer)
 router.post("/deletecustomer",CustomerController.deleteCustomer)
 router.post("/updatecustomer",CustomerController.updateCustomer)
+router.post("/dologin",CustomerController.DoLogin)
 
 const ServiceController=require('../Controller/ServiceController')
 router.post('/addservice',ServiceController.addService)
