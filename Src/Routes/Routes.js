@@ -20,5 +20,10 @@ router.get("/getAllAppointments",AppointmentController.getAllAppointment)
 router.post('/deleteAppointment',AppointmentController.deleteAppointment)
 router.post('/updateAppointment',AppointmentController.UpdateAppointment)
 
+const CountController=require("../Controller/CounterController")
+router.post('/getcustomercount',CountController.getCustomerCount)
+router.post('/getservicecount',CountController.getServiceCount)
+router.post('/getAppointmentcount',CountController.getAppointmentCount)
+
 
 module.exports=router
