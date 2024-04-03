@@ -34,11 +34,22 @@ exports.updateService = (req, res) => {
     Service.findByIdAndUpdate({ _id: req.body.sid },
         {
             ServicePrice: req.body.ServicePrice,
-            IsActive:req.body.IsActive
+            IsActive: req.body.IsActive
         },
         {
             new: true
         }).then((result) => {
+            res.status(200).json(result)
+        }).catch((err) => {
+            res.status(500).send(err)
+        });
+}
+
+exports.getServivesByType = (req, res) => {
+    Service.find()
+        .where('ServiceType')
+        .eq(req.body.servicetype)
+        .then((result) => {
             res.status(200).json(result)
         }).catch((err) => {
             res.status(500).send(err)

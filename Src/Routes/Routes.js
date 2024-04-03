@@ -13,17 +13,22 @@ router.post('/addservice',ServiceController.addService)
 router.get("/getAllservices",ServiceController.getAllServices)
 router.post('/deleteservice',ServiceController.deleteService)
 router.post('/updateservice',ServiceController.updateService)
+router.post('/serviceByType',ServiceController.getServivesByType)
 
 const AppointmentController=require("../Controller/AppointmentController")
 router.post('/addappointment',AppointmentController.addAppointment)
 router.get("/getAllAppointments",AppointmentController.getAllAppointment)
 router.post('/deleteAppointment',AppointmentController.deleteAppointment)
 router.post('/updateAppointment',AppointmentController.UpdateAppointment)
+router.post('/getAppointmentById',AppointmentController.getAppointmentById)
 
 const CountController=require("../Controller/CounterController")
-router.post('/getcustomercount',CountController.getCustomerCount)
-router.post('/getservicecount',CountController.getServiceCount)
-router.post('/getAppointmentcount',CountController.getAppointmentCount)
+router.get('/getcustomercount',CountController.getCustomerCount)
+router.get('/getservicecount',CountController.getServiceCount)
+router.get('/getAppointmentcount',CountController.getAppointmentCount)
+
+const RatingController=require("../Controller/RatingController")
+router.post('/addrating',RatingController.addrating)
 
 
 module.exports=router

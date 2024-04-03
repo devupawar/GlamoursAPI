@@ -22,6 +22,7 @@ exports.getAllCustomer=(req,res)=>{
         res.status(500).send(err)
     })
 }
+
 exports.deleteCustomer=(req,res)=>{
     Customer.deleteOne({_id:req.body.cid})
     .then((result) => {
@@ -47,7 +48,7 @@ exports.updateCustomer=(req,res)=>{
         });
 }
 exports.DoLogin=(req,res)=>{
-    Customer.find({
+    Customer.findOne({
         CustomerEmail:req.body.CustomerEmail,
         CustomerPassword:req.body.CustomerPassword
     })
